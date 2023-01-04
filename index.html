@@ -6,10 +6,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RTO Finder</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind magic happens here -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
 
-<body>
-    <h1>RTO Finder</h1>
+<body class="bg-gray-50">
+    <main>
+        <div class="h-64 bg-blue-400">
+            <ul class="uppercase font-bold flex space-x-4 justify-end p-5 text-xs">
+                <li class="hover:text-orange-500" onclick="alert('Created with Love.')">ABOUT</li>
+                <li class="hover:text-orange-500">
+                    <a href="https://github.com/anburocky3/RTO-NumberPlate-Finder">Github</a>
+                </li>
+            </ul>
+            <div class="flex flex-col justify-center items-center space-y-5 py-5">
+                <h1 class="font-bold text-xl">RTO Finder</h1>
+                <div class="relative">
+                    <svg width="24" height="24" viewBox="0 0 24 24"
+                        class="absolute top-1.5 left-2 right-0 text-gray-600">
+                        <path fill="currentColor"
+                            d="m19.6 21l-6.3-6.3q-.75.6-1.725.95Q10.6 16 9.5 16q-2.725 0-4.612-1.887Q3 12.225 3 9.5q0-2.725 1.888-4.613Q6.775 3 9.5 3t4.613 1.887Q16 6.775 16 9.5q0 1.1-.35 2.075q-.35.975-.95 1.725l6.3 6.3ZM9.5 14q1.875 0 3.188-1.312Q14 11.375 14 9.5q0-1.875-1.312-3.188Q11.375 5 9.5 5Q7.625 5 6.312 6.312Q5 7.625 5 9.5q0 1.875 1.312 3.188Q7.625 14 9.5 14Z" />
+                    </svg>
+                    <input type="search" placeholder="Search number plate"
+                        class="text-sm pl-10 pr-5 py-2 rounded focus:outline-none uppercase placeholder:normal-case placeholder:tracking-normal tracking-widest">
+                </div>
+            </div>
+        </div>
+
+        <!-- Result start -->
+        <div class="bg-white m-10 shadow p-5 rounded hidden" id="resultSection">
+            <span class="text-xs">Your Query: </span> <span class="font-semibold tracking-widest" id="query">TN12</span>
+
+            <table class="my-5 text-sm w-full">
+                <tbody>
+                    <tr>
+                        <td class="border p-2 font-semibold">ID</td>
+                        <td class="border p-2" id="rto_id">1</td>
+                    </tr>
+                    <tr>
+                        <td class="border p-2 font-semibold">Code</td>
+                        <td class="border p-2" id="rto_code">TN-10</td>
+                    </tr>
+                    <tr>
+                        <td class="border p-2 font-semibold">Location</td>
+                        <td class="border p-2" id="rto_location">Chennai North</td>
+                    </tr>
+                    <tr>
+                        <td class="border p-2 font-semibold">Type</td>
+                        <td class="border p-2" id="rto_type">RTO</td>
+                    </tr>
+                    <tr>
+                        <td class="border p-2 font-semibold">District</td>
+                        <td class="border p-2" id="rto_district">Chennai</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Result end -->
+    </main>
 
     <script src="./assets/js/main.js"></script>
 </body>
