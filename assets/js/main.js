@@ -11,7 +11,7 @@ const searchRecord = async (value) => {
   const jsonData = await getJSONData();
 
   const recordFound = jsonData.find((record) => {
-    return record.code === value || value.toUpperCase().startsWith(record.code);
+    return record.code === value.toUpperCase();
   });
 
   const resultSectionEl = document.querySelector('#resultSection');
